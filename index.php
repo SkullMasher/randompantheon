@@ -119,4 +119,5 @@
 		'Animations' => 'http://animations.bandcamp.com/',
 		'Nemertines' => 'http://nemertines.bandcamp.com/'
 	];
-	var_dump( array_rand($pantheon_list) );
+	// var_dump( $pantheon_list[array_rand($pantheon_list)] );
+	header("Location:" . $pantheon_list[array_rand($pantheon_list)]);
