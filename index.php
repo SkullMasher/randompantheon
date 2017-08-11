@@ -1,124 +1,42 @@
 <?php 
 
-	$pantheon_list = [
-		'Animals As Leaders' => 'https://animalsasleaders.bandcamp.com/',
-		'David Maxim Micic' => 'https://davidmaximmicic.bandcamp.com/',
-		'Sithu Aye' => 'https://sithuayemusic.bandcamp.com/',
-		'Plini' => 'https://plini.bandcamp.com/',
-		'An Endless Sporadic' => 'https://anendlesssporadic.bandcamp.com/',
-		'Pillars in The Sky' => 'https://pillarsinthesky.bandcamp.com/',
-		'Polyphia' => 'https://polyphia.bandcamp.com/',
-		'Cloudkicker' => 'http://cloudkickermusic.com/',
-		'Chimp Spanner' => 'http://music.basickrecords.com/album/all-roads-lead-here',
-		'Haunted Shores' => 'https://hauntedshores.bandcamp.com/',
-		'Anup Sastry' => 'https://anupsastry.bandcamp.com/',
-		'Scale The Summit' => 'https://scale-the-summit.bandcamp.com/',
-		'Jakub Zytecki' => 'https://jakubzytecki.bandcamp.com/',
-		'Intervals' => 'https://intervalsmusic.bandcamp.com/',
-		'Clément Bélio' => 'https://clems6belio.bandcamp.com/',
-		'Wide Eyes' => 'https://wideeyesofficial.bandcamp.com/',
-		'Ever Forthright' => 'https://everforthright.bandcamp.com/',
-		'Destiny Potato' => 'https://destinypotato.bandcamp.com',
-		'Widek' => 'https://widekmusic.bandcamp.com',
-		'MODERN DAY BABYLON' => 'https://moderndaybabylon.bandcamp.com',
-		'Halcyon' => 'https://halcyonofficial.bandcamp.com',
-		'ORION' => 'https://orionband.bandcamp.com/',
-		'Exivious' => 'https://exivious.bandcamp.com',
-		'Time Machinery' => 'https://timemachinery.bandcamp.com/',
-		'Entities' => 'https://entities916.bandcamp.com/',
-		'The Lone Tree In The Woods That Killed Us All' => 'https://thelonetreeinthewoodsthatkilledusall.bandcamp.com/',
-		'CARTOON THEORY' => 'https://cartoontheory.bandcamp.com/',
-		'Omega District' => 'https://omegadistrict.bandcamp.com/',
-		'i built the sky' => 'https://ibuiltthesky.bandcamp.com/',
-		'Pomegranate Tiger' => 'https://pomegranatetiger.bandcamp.com',
-		'VOLA' => 'https://volaband.bandcamp.com/',
-		'vitalism' => 'https://vitalism.bandcamp.com/',
-		'Wanzwa' => 'http://music.wanzwa.com/',
-		'Alkanoid' => 'https://alkaloid-band.bandcamp.com',
-		'Mendel' => 'https://mendelian.bandcamp.com/',
-		'Tree Of Life' => 'https://treeoflife-project.bandcamp.com/',
-		'grumusic' => 'http://grumusic.bandcamp.com/',
-		'Among the Sleep' => 'https://among-the-sleep.bandcamp.com/album/casket',
-		'Exotic Animal Petting Zoo' => 'https://eapz.bandcamp.com/album/tree-of-tongues',
-		'ForTiorI' => 'https://fortiori.bandcamp.com',
-		'Owane' => 'http://owane.bandcamp.com/',
-		'Fifth Quadrant' => 'https://fifthquadrant.bandcamp.com/',
-		'Luke Dowsett' => 'https://lukedowsett.bandcamp.com',
-		'Theo Young' => 'http://theoyoung.bandcamp.com/',
-		'Dan James Griffin' => 'https://danjamesgriffincomposer.bandcamp.com',
-		'The Surrealist' => 'https://thesurrealist.bandcamp.com/',
-		'Sequence Of Discord' => 'https://sodband.bandcamp.com',
-		'The Helix Nebula' => 'https://thehelixnebula.bandcamp.com/',
-		'Crossing the Rubicon' => 'https://crossingtherubiconohio.bandcamp.com/',
-		'Mammoth' => 'https://mammothprog.bandcamp.com/',
-		'Interiors' => 'https://interi0rs.bandcamp.com/',
-		'Outrun the Sunlight' => 'https://outrunthesunlight.bandcamp.com/',
-		'NOK NOVUM' => 'https://noknovum.bandcamp.com/',
-		'Soul Cycle' => 'https://soulcyclemetal.bandcamp.com/',
-		'Pathways' => 'https://pathwaysband.bandcamp.com/',
-		'Odyssey' => 'https://odysseyspokane.bandcamp.com/',
-		'XURL' => 'https://xurl.bandcamp.com/album/origin',
-		'The Bellerophon Project' => 'https://thebellerophonproject.bandcamp.com/',
-		'Being' => 'https://beingmusic.bandcamp.com/',
-		'Maeth' => 'https://maeth.bandcamp.com/',
-		'Dorthal' => 'https://dorthal.bandcamp.com/',
-		'KreepMaster' => 'https://kreepmaster.bandcamp.com/',
-		'Subscale' => 'https://subscale.bandcamp.com',
-		'Miroist' => 'http://miroist.com',
-		'Rest Among Ruins' => 'http://restamongruins.bandcamp.com/',
-		'Alien Garden' => 'https://aliengardengroup.bandcamp.com/',
-		'Alustrium' => 'https://alustriumofficial.bandcamp.com',
-		'Concatenate' => 'https://concatenate.bandcamp.com',
-		'Interloper' => 'https://interloperofficial.bandcamp.com/',
-		'Haamoja' => 'http://haamoja.bandcamp.com/',
-		'Without Walls' => 'https://withoutwallsofficial.bandcamp.com',
-		'Michael Avery' => 'http://michaelavery.bandcamp.com/',
-		'Epitome' => 'https://epitometw.bandcamp.com',
-		'Sergey Golovin' => 'http://sergeygolovin.bandcamp.com/',
-		'Oceill' => 'http://oceill.bandcamp.com/',
-		'Earthside' => 'http://earthside.bandcamp.com/',
-		'A Sense of Gravity' => 'http://store.asenseofgravity.com',
-		'Dark Matter Secret' => 'http://darkmattersecret.bandcamp.com/',
-		'Chorder' => 'https://chordermusic.bandcamp.com/',
-		'Serious Beak' => 'http://seriousbeak.bandcamp.com/',
-		'Resurrecting Id' => 'https://resurrectingid.bandcamp.com',
-		'Diminish The Gods' => 'http://diminishthegods.bandcamp.com/',
-		'The Dali Thundering Concept' => 'http://thedalithunderingconcept.bandcamp.com/',
-		'Mike Dawes' => 'http://mikedawes.bandcamp.com/',
-		'Arcane Alchemists' => 'http://arcanealchemists.bandcamp.com/',
-		'The Room Colored Charlatan' => 'http://theroomcoloredcharlatan.bandcamp.com/',
-		'Toska' => 'http://officialtoska.bandcamp.com/',
-		'Sean Ashe' => 'http://seanashe.bandcamp.com/',
-		'Travis Orbin' => 'http://travisorbin.bandcamp.com/',
-		'Organized Chaos' => 'http://organizedchaosband.bandcamp.com/',
-		'Echo Spiral' => 'http://echospiral.bandcamp.com/',
-		'HUNG' => 'http://iamhung.bandcamp.com/',
-		'Disperse' => 'http://disperseofficial.bandcamp.com/',
-		'Dora the Destroyer' => 'http://dorathedestroyer.bandcamp.com/',
-		'Ideology' => 'https://ideologyband.bandcamp.com',
-		'Lizard Professor' => 'https://lizardprofessor.bandcamp.com',
-		'Special Providence' => 'http://specialprovidence.bandcamp.com/',
-		'Once N For All' => 'http://oncenforall.bandcamp.com/',
-		'Their Dogs Were Astronauts' => 'http://theirdogswereastronauts.bandcamp.com/',
-		'Sequoyah' => 'http://sequoyahband.bandcamp.com/',
-		'Teramobil' => 'http://teramobil.bandcamp.com/',
-		'Dawn of Dementia' => 'http://dawnofdementia.bandcamp.com/',
-		'Kadinja' => 'https://kadinja.bandcamp.com/',
-		'covet' => 'http://covetband.bandcamp.com/',
-		'Save Us From The Archon' => 'http://saveusfromthearchon.bandcamp.com/',
-		'Absently' => 'http://absently.bandcamp.com/',
-		'Skyhaven' => 'http://skyhavenband.bandcamp.com/',
-		'Tetrafusion' => 'http://tetrafusion.bandcamp.com/',
-		'Blumen' => 'http://blumenmusic.bandcamp.com/',
-		'Shattered Skies' => 'http://shatteredskies.bandcamp.com/',
-		'Arsafes' => 'http://arsafes.bandcamp.com/',
-		'Itzamna' => 'http://itzamna.bandcamp.com/',
-		'Big Big Train' => 'http://bigbigtrain.bandcamp.com/',
-		'Sea In The Sky' => 'http://seainthesky.bandcamp.com/',
-		'Twelve Foot Ninja' => 'http://twelvefootninja.bandcamp.com/',
-		'Persefone' => 'http://persefone1.bandcamp.com/',
-		'Animations' => 'http://animations.bandcamp.com/',
-		'Nemertines' => 'http://nemertines.bandcamp.com/'
-	];
-	// var_dump( $pantheon_list[array_rand($pantheon_list)] );
-	header("Location:" . $pantheon_list[array_rand($pantheon_list)]);
+require_once 'settings.php'; // Contains the artist list
+
+// print_r( $band_list );
+// header("Location:" . $band_list[array_rand($band_list)]);
+$random_band = array_rand($band_list);
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Square Circle random pantheon</title>
+  <meta name="description" content="Bandcamp pantheon of all the best prog artist cassified by Square Circle.">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1 class="main-title">Square Circle Random Pantheon</h1>
+    <h2>Bandcamp pantheon of all the best prog artist cassified by Square Circle.</h2>
+  </header>
+  <main>
+    <h3>Here's your random band to listen to :</h3>
+    <a href="<?php echo $band_list[$random_band] ?>" class="btn"><?php echo $random_band ?></a>
+    <h4>Unfiltered list of all the artist</h4>
+    <div class="artist-list">
+    <?php foreach ($band_list as $artist_name => $artist_value): ?>
+      <a href="<?php echo $artist_value ?>" class="btn"><?php echo $artist_name ?></a>
+    <?php endforeach; ?>
+    </div>
+  </main>
+  <footer>
+    <hr>
+    <p>Initiative made by a great group of friends who listen to some weird ass shit.</p>
+    <p><small><em>* Band order may have been altered in some logical way</em></small></p>
+    <p><small><em>* May or may not contain actual prog or djent</em></small></p>
+  </footer>
+</div>
+</body>
+</html>
