@@ -22,6 +22,7 @@
 		'Widek' => 'https://widekmusic.bandcamp.com',
 		'MODERN DAY BABYLON' => 'https://moderndaybabylon.bandcamp.com',
 		'Halcyon' => 'https://halcyonofficial.bandcamp.com',
+		'ORION' => 'https://orionband.bandcamp.com/',
 		'Exivious' => 'https://exivious.bandcamp.com',
 		'Time Machinery' => 'https://timemachinery.bandcamp.com/',
 		'Entities' => 'https://entities916.bandcamp.com/',
