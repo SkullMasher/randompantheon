@@ -2,10 +2,7 @@
 
 require_once 'settings.php'; // Contains the artist list
 
-// print_r( $band_list );
-// header("Location:" . $band_list[array_rand($band_list)]);
 $random_band = array_rand($band_list);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
