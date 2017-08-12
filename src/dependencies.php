@@ -2,7 +2,7 @@
 // DIC configuration
 
 $container = $app->getContainer();
-
+// Register twig templating engine as view renderer
 $container['view'] = function ($container) {
     $settings = $container->get('settings')['view'];
     $view = new \Slim\Views\Twig($settings['template_path'], [
@@ -15,7 +15,16 @@ $container['view'] = function ($container) {
 
     return $view;
 };
+// Register database ORM Eloquent
+$container['db'] = function ($container) {
+    $capsule = new \Illuminate\Database\Capsule\Manager;
+    $capsule->addConnection($container['settings']['db']);
 
+    $capsule->setAsGlobal();
+    $capsule->bootEloquent();
+
+    return $capsule;
+};
 // monolog
 $container['logger'] = function ($c) {
     $settings = $c->get('settings')['logger'];
