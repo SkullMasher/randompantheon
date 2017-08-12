@@ -16,17 +16,4 @@ return [
   ],
 ];
 
-return [
-  'settgins' => [
-    // Database settings, ORM is Eloquent
-    'db' => [
-      'driver' => 'mysql',
-      'host' => '127.0.0.1',
-      'database' => 'randompantheon',
-      'username' => 'skullmasher',
-      'password' => '',
-      'charset' => 'utf8_unicode_ci',
-      'prefix' => ''
-    ],
-  ]
-];
+require database.php;

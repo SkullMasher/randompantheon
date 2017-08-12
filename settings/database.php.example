@@ -1,0 +1,17 @@
+<?php
+/**
+ * Database settings, ORM is Eloquent
+ */
+return [
+  'settgins' => [
+    'db' => [
+      'driver' => 'mysql',
+      'host' => '127.0.0.1',
+      'database' => 'randompantheon',
+      'username' => 'dbuser',
+      'password' => 'dbpassword',
+      'charset' => 'utf8_unicode_ci',
+      'prefix' => ''
+    ],
+  ]
+];
