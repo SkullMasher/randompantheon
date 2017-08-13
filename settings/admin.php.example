@@ -8,6 +8,6 @@ return [
     'admin' => [
       'username' => 'ExampleUsername',
       'password' => 'ExamplePassword'
-    ]
-  ]
+    ],
+  ],
 ];

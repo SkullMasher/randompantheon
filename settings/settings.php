@@ -1,9 +1,6 @@
 <?php
 
-require admin.php; // Admin portal credential
-require database.php; // database settings to get band list & stuff
-
-// Framework settings also no needs to modify
+// Framework settings no need to modify
 return [
   'settings' => [
     'displayErrorDetails' => true, // set to false in production
@@ -20,3 +17,7 @@ return [
     ],
   ],
 ];
+
+// Go edit these file !
+require admin.php; // Admin portal credential
+require database.php; // database settings to get band list & stuff
