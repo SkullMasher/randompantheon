@@ -9,11 +9,15 @@ $app->get('/', function ($request, $response, $args) {
     return $this->view->render($response, 'homepage.twig', $args);
   })->setName('home');
 
-$app->get('/admin', function ($request, $response, $args) {
-  $this->logger->info(" '/admin' route");
-  return $this->view->render($response, 'admin.twig', $args);
-})->setName('admin');
+$app->group('/admin', function () {
+  // /admin
+  $this->get('', function ($request, $response, $args) {
+    $this->logger->info(" '/admin' route");
+    return $this->view->render($response, 'admin.twig', $args);
+  })->setName('admin');
+})->add(new Auth($container->get('router')));
 
+// /admin/login
 $app->get('/admin/login', function ($request, $response, $args) {
   $this->logger->info(" '/admin/login' route");
   return $this->view->render($response, 'login.twig', $args);
