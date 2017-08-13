@@ -1,6 +1,6 @@
 <?php
 
-// Framework settings no need to modify
+// Slim Framework settings no need to modify
 return [
   'settings' => [
     'displayErrorDetails' => true, // set to false in production
