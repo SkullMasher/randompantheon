@@ -1,0 +1,13 @@
+<?php
+/**
+ * Specify the admin credential here to access the admin area
+ * located on the /admin route
+ */
+return [
+  'settings' => [
+    'admin' => [
+      'username' => 'ExampleUsername',
+      'password' => 'ExamplePassword'
+    ]
+  ]
+];
