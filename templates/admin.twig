@@ -1,5 +1,25 @@
 {% extends 'app.twig' %}
 
+{% block header %}
+  <h1 class="tac">Square Circle Random Pantheon</h1>
+  <h2 class="tac">ADMIN</h2>
+{% endblock %}
+
 {% block main %}
-  <h1>lodr !</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Band name</th>
+        <th>Bandcamp link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>David Maxim Micic</td>
+        <td>https://davidmaximmicic.bandcamp.com/</td>
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}
