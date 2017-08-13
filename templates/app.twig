@@ -8,10 +8,13 @@
 </head>
 <body>
 <div class="wrapper">
+{% block header %}
   <header>
     <h1 class="main-title">Square Circle Random Pantheon</h1>
     <h2>Bandcamp pantheon of all the best prog artist classified by Square Circle.</h2>
   </header>
+{% endblock %}
+{% block main %}
   <main>
     <h3>Here's your random band to listen to :</h3>
     <a href="" class="btn"></a>
@@ -20,12 +23,15 @@
       <a href="" class="btn"></a>
     </div>
   </main>
+{% endblock %}
+{% block footer %}
   <footer>
     <hr>
     <p>Initiative made by a great group of friends who listen to some weird ass shit.</p>
     <p><small><em>* Band order may have been altered in some logical way</em></small></p>
     <p><small><em>* May or may not contain actual prog or djent</em></small></p>
   </footer>
+{% endblock %}
 </div>
 </body>
 </html>
