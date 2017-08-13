@@ -1,0 +1,28 @@
+{% extends 'app.twig' %}
+
+{% block header %}
+  <h1 class="tac">Square Circle Random Pantheon</h1>
+  <h2 class="tac">ADMIN LOGIN</h2>
+  <nav class="tar">
+    <a href="{{ path_for('home') }}" class="btn">Retour au site</a>
+  </nav>
+{% endblock %}
+
+{% block main %}
+  <form action="/admin" method="post">
+    <fieldset>
+      <legend></legend>
+    <div>
+      <label for="adminName">Name</label>
+    </div>
+    <input id="adminName" type="text" name="adminName">
+    <div>
+      <label for="adminPassword">Password</label>
+    </div>
+    <input id="adminPassword" type="text" name="adminPassword">
+    <div>
+      <input type="submit" value="Login">
+    </div>
+    </fieldset>
+  </form>
+{% endblock %}

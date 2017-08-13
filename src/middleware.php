@@ -3,11 +3,19 @@
 
 $app->add(new \Slim\Csrf\Guard);
 
-$mw = function ($request, $response, $next) {
-    $response->getBody()->write('BEFORE');
-    $response = $next($request, $response);
-    $response->getBody()->write('AFTER');
+/**
+* Handles authentification to the admin Back Office
+*/
+class Auth
+{
+  public function __invoke($request, $response, $next)
+  {
+    if (isset($_SESSION['user'])) {
+      $response->getBody()->write('connected');
+    } else {
+      $response->getBody()->write('NOT connected');
+    }
 
-    return $response;
-};
-
+    return $next($request, $response);
+  }
+}
