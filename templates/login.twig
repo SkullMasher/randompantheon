@@ -10,7 +10,7 @@
 
 {% block main %}
 
-  <form action="{{ path_for('login') }}" method="post" class="login-form">
+  <form action="{{ path_for('login') }}" method="post" class="login-form" autocomplete="off">
     <fieldset>
       <legend></legend>
     <div>
@@ -23,6 +23,9 @@
     <input id="adminPassword" type="text" name="adminPassword" class="login-input">
     <div>
       {{ csrf.field | raw }}
+      {% for errormsg in flash('loginerror') %}
+        <p>{{ errormsg }}</p>
+      {% endfor %}
       <input type="submit" value="Login" class="login-submit">
     </div>
     </fieldset>
