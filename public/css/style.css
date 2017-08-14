@@ -7,6 +7,11 @@ body {
   margin: 0 auto;
 }
 
+.wrapper-small {
+  max-width: 666px;
+  margin: 0 auto;
+}
+
 .tac {
   text-align: center;
 }
