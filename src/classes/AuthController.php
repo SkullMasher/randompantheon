@@ -21,6 +21,8 @@ class AuthController
 
   public function postLogin($request, $response)
   {
+    $postAdminName = $request->getParam('adminName');
+    $postAdminPassword = $request->getParam('adminPassword');
     $shrugFace = '<p class="tac">¯\_ツ_/¯</p>';
     $errorMessage = '<p>Wrong username or password. Try again.</p>';
  
