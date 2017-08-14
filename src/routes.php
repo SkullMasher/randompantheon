@@ -19,9 +19,14 @@ $app->group('/admin', function () {
 
 // /admin/login
 $app->get('/admin/login', function ($request, $response, $args) {
-  
   $this->logger->info(" '/admin/login' route");
+
+  if (isset($_SESSION['user'])) {
+    return $response->withRedirect($this->router->pathfor('admin'));
+  } 
+
   return $this->view->render($response, 'login.twig', $args);
 })->setName('login');
 
 $app->post('/admin/login', 'AuthController:postLogin');
+$app->get('/admin/logout', 'AuthController:getLogout')->setName('logout');

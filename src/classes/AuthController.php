@@ -37,4 +37,9 @@ class AuthController
     // $parsedBody = $request->getParsedBody();
     // return $response->getBody()->write(var_dump($this->adminName));
   }
+
+  public function getLogout($request, $response) {
+    unset($_SESSION['user']);
+    return $response->withRedirect($this->router->pathfor('home'));
+  }
 }

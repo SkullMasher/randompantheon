@@ -14,7 +14,7 @@ class AuthMiddleware
   public function __invoke($request, $response, $next)
   {
     if (isset($_SESSION['user'])) {
-      $response->getBody()->write('connected');
+      // $response->getBody()->write('connected');
     } else {
       return $response->withRedirect($this->router->pathfor('login'));
       // return $response->getBody()->write(var_dump($this->router->pathfor('login')));
