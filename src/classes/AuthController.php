@@ -21,13 +21,13 @@ class AuthController
 
   public function postLogin($request, $response)
   {
+    $shrugFace = '<p class="tac">¯\_ツ_/¯</p>';
+    $errorMessage = '<p>Wrong username or password. Try again.</p>';
  
     if ($this->adminName === $postAdminName && $this->adminPassword === $postAdminPassword) {
       $_SESSION['user'] = $postAdminName;
       return $response->withRedirect($this->router->pathfor('admin'));
     } else {
-      $shrugFace = '¯\_ツ_/¯';
-      $errorMessage = 'Wrong username or password. Try again.';
       $this->flash->addMessage('loginerror', $shrugFace);
       $this->flash->addMessage('loginerror', $errorMessage);
       return $response->withRedirect($this->router->pathfor('login'));

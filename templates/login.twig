@@ -24,7 +24,7 @@
     <div>
       {{ csrf.field | raw }}
       {% for errormsg in flash('loginerror') %}
-        <p>{{ errormsg }}</p>
+        {{ errormsg | raw }}
       {% endfor %}
       <input type="submit" value="Login" class="login-submit">
     </div>
