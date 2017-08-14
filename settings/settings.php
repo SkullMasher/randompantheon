@@ -1,5 +1,9 @@
 <?php
 
+// Go edit these file !
+require 'admin.php'; // Admin portal credential
+require 'database.php'; // database settings to get band list & stuff
+
 // Slim Framework settings no need to modify
 return [
   'settings' => [
@@ -15,9 +19,7 @@ return [
       'path' => __DIR__ . '/../logs/app.log',
       'level' => \Monolog\Logger::DEBUG,
     ],
+    'db' => $databaseSettings,
+    'admin' => $adminCredentials,
   ],
 ];
-
-// Go edit these file !
-require admin.php; // Admin portal credential
-require database.php; // database settings to get band list & stuff

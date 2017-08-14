@@ -11,7 +11,7 @@ class AuthController
   function __construct($container)
   {
     $this->container = $container;
-    $this->adminName = $container['settings']['admin']['username'];
+    $this->adminName = $container['settings'];
     $this->adminPassword = $container['settings']['admin']['password'];
   }
 
