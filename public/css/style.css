@@ -1,14 +1,16 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: sans-serif;
 }
 
 .wrapper {
   max-width: 1600px;
-  margin: 0 auto;
-}
-
-.wrapper-small {
-  max-width: 666px;
   margin: 0 auto;
 }
 
@@ -20,12 +22,30 @@ body {
   text-align: right;
 }
 
+.btn {
+  padding: 10px;
+}
+
 .artist-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.btn {
-  padding: 10px;
+.login-form {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.login-input {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.login-submit {
+  padding: 5px 10px;
 }

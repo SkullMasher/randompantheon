@@ -10,20 +10,20 @@
 
 {% block main %}
 
-  <form action="{{ path_for('login') }}" method="post" class="wrapper-small">
+  <form action="{{ path_for('login') }}" method="post" class="login-form">
     <fieldset>
       <legend></legend>
     <div>
       <label for="adminName">Name</label>
     </div>
-    <input id="adminName" type="text" name="adminName">
+    <input id="adminName" type="text" name="adminName" class="login-input">
     <div>
       <label for="adminPassword">Password</label>
     </div>
-    <input id="adminPassword" type="text" name="adminPassword">
+    <input id="adminPassword" type="text" name="adminPassword" class="login-input">
     <div>
       {{ csrf.field | raw }}
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" class="login-submit">
     </div>
     </fieldset>
   </form>
