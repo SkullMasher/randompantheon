@@ -37,6 +37,12 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
+// Flash message
 $container['flash'] = function () {
     return new \Slim\Flash\Messages();
+};
+
+// CSRF protection
+$container['csrf'] = function ($c) {
+    return new \Slim\Csrf\Guard;
 };

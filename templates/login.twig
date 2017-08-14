@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block main %}
-  <form action="/admin" method="post">
+
+  <form action="{{ path_for('login') }}" method="post">
     <fieldset>
       <legend></legend>
     <div>
@@ -21,6 +22,7 @@
     </div>
     <input id="adminPassword" type="text" name="adminPassword">
     <div>
+      {{ csrf.field | raw }}
       <input type="submit" value="Login">
     </div>
     </fieldset>
