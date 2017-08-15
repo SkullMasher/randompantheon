@@ -4,9 +4,9 @@
 $app->get('/', function ($request, $response, $args) {
     // Sample log message
     $this->logger->info(" '/' route");
-
+    $allBands = Band::all()->toArray();
     // Render index view
-    return $this->view->render($response, 'homepage.twig', $args);
+    return $this->view->render($response, 'homepage.twig', [ 'bands' => $allBands]);
   })->setName('home');
 
 $app->group('/admin', function () {

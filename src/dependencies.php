@@ -20,15 +20,20 @@ $container['view'] = function ($container) {
 };
 
 // Register database ORM Eloquent
-$container['db'] = function ($container) {
-  $capsule = new \Illuminate\Database\Capsule\Manager;
-  $capsule->addConnection($container['settings']['db']);
+// $container['db'] = function ($container) {
+//   $capsule = new \Illuminate\Database\Capsule\Manager;
+//   $capsule->addConnection($container['settings']['db']);
 
-  $capsule->setAsGlobal();
-  $capsule->bootEloquent();
+//   $capsule->setAsGlobal();
+//   $capsule->bootEloquent();
 
-  return $capsule;
-};
+//   return $capsule;
+// };
+
+$capsule = new \Illuminate\Database\Capsule\Manager;
+$capsule->addConnection($container['settings']['db']);
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
 
 // monolog
 $container['logger'] = function ($c) {
@@ -47,4 +52,11 @@ $container['flash'] = function () {
 // CSRF protection
 $container['csrf'] = function ($c) {
     return new \Slim\Csrf\Guard;
+};
+
+$container[AdminController::class] = function ($c) {
+    $view = $c->get('view');
+    $logger = $c->get('logger');
+    $table = $c->get('db')->table('bands');
+    return new \App\WidgetController($view, $logger, $table);
 };

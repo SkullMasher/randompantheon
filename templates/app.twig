@@ -20,7 +20,9 @@
     <a href="" class="btn"></a>
     <h4>Unfiltered list of all the artist</h4>
     <div class="artist-list">
-      <a href="" class="btn"></a>
+      {% for band in bands %}
+        <a href="{{ band.link }}" class="btn">{{ band.name }}</a>
+      {% endfor %}
     </div>
   </main>
 {% endblock %}
