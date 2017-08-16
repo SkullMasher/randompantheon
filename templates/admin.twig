@@ -25,6 +25,7 @@
           <input type="text" name="bandLink" id="bandLink" class="input input--300" placeholder="https://davidmaximmicic.bandcamp.com/">
         </div>
       </div>
+      <input type="hidden" name="_method" value="post">
       {{ csrf.field | raw }}
       <input type="submit" class="login-submit" value="Add this band already !">
     </form>
@@ -36,6 +37,7 @@
         <th>Order</th>
         <th>Band name</th>
         <th>Bandcamp link</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -44,6 +46,14 @@
         <td>{{ band.id }}</td>
         <td>{{ band.name }}</td>
         <td>{{ band.link }}</td>
+        <td>
+          <form action="{{ path_for('admin') }}" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="hidden" name="bandId" value="{{ band.id }}" />
+            {{ csrf.field | raw }}
+            <input type="submit" class="input-submit" value="X"></input>
+          </form>
+        </td>
       </tr>
     {% endfor %}
     </tbody>

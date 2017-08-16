@@ -24,12 +24,26 @@ class AdminController
     return $this->view->render($response, 'admin.twig', [ 'bands' => $allBands]);
   }
 
-  public function addBand($request, $response)
+  public function postData($request, $response) {
+    $method = $request->getParam('_method');
+    switch ($method) {
+      case 'post':
+        return $this->addBand($request, $response);
+      case 'delete':
+        return $this->deleteBand($request, $response);
+      default:
+        die('You are in the default of the method case !');
+        break;
+    }
+  }
+
+  private function addBand($request, $response)
   {
-    $this->logger->info(" /admin POST");
     $bandName = $request->getParam('bandName');
     $bandLink = $request->getParam('bandLink');
+
     $successMessage = '<p class="success">(☞ﾟ∀ﾟ)☞ ' . $bandName .' as been added !</p>';
+    $errorMessage = '<p class="error">¯\_ツ_/¯ You failed at adding a band !</p>';
 
     if (strlen($bandName) > 0 && strlen($bandName) < 255 && strlen($bandLink) > 0 && strlen($bandLink) < 255) {
       // Insert to bands table
@@ -42,10 +56,15 @@ class AdminController
       return $response->withRedirect($this->router->pathfor('admin'));
     }
 
-    $this->flash->addMessage('addBandError', '<p class="error">¯\_ツ_/¯ You failed at adding a band !</p>');
+    $this->flash->addMessage('addBandError', $errorMessage);
     return $response->withRedirect($this->router->pathfor('admin'));
+  }
 
-    // $parsedBody = $request->getParsedBody();
-    // return $response->getBody()->write(var_dump($this->adminName));
+  private function deleteBand($request, $response)
+  {
+    $bandId = $request->getParam('bandID');
+    $successMessage = '<p class="success">(☞ﾟ∀ﾟ)☞ ' . $bandName .' as been <span class="error">DELETED</span> !</p>';
+    $errorMessage = '<p class="error">¯\_ツ_/¯ Could not delete that band !</p>';
+    
   }
 }

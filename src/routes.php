@@ -13,7 +13,7 @@ $app->group('/admin', function () {
   // /admin
   $this->get('', 'AdminController:getPage')->setName('admin');
 
-  $this->post('', 'AdminController:addband');
+  $this->post('', 'AdminController:postData');
 
   // /admin/
   $this->get('/', function ($request, $response, $args) {
