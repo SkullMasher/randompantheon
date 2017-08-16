@@ -44,9 +44,9 @@
     <tbody>
     {% for band in bands %}
       <tr>
-        <td>{{ band.id }}</td>
+        <td>{{ band.order | default('¯\\_ツ_/¯') }}</td>
         <td>{{ band.name }}</td>
-        <td>{{ band.link }}</td>
+        <td>{{ band.link | default('¯\\_ツ_/¯') }}</td>
         <td>
           <form action="{{ path_for('admin') }}" method="post">
             <input type="hidden" name="_method" value="delete" />
@@ -59,6 +59,7 @@
     {% endfor %}
     </tbody>
   </table>
+  <p><small>¯\_ツ_/¯ <em>means that the value is not specified</em></small></p>
 {% endblock %}
 
 {% block footer %}
