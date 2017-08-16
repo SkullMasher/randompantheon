@@ -14,6 +14,10 @@ body {
   margin: 0 auto;
 }
 
+.wrapper-small {
+  max-width: 500px;
+}
+
 .tac {
   text-align: center;
 }
@@ -22,7 +26,48 @@ body {
   text-align: right;
 }
 
-.btn {
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.db {
+  display: block;
+}
+
+.input {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.input--full {
+  width: 100%;
+}
+
+.input--100 {
+  width: 100px;
+}
+
+.input--200 {
+  width: 200px;
+}
+
+.input--300 {
+  width: 300px;
+}
+
+.input--400 {
+  width: 400px;
+}
+
+.input--500 {
+  width: 300px;
+}
+
+.band-item {
   padding: 10px;
 }
 
@@ -32,6 +77,18 @@ body {
   justify-content: space-between;
 }
 
+.add-band {
+  /*width: 700px;*/
+}
+
+.add-band-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-band-input {
+  margin-right: 20px;
+}
 .login-form {
   max-width: 320px;
   margin: 0 auto;
@@ -47,5 +104,12 @@ body {
 }
 
 .login-submit {
-  padding: 5px 10px;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 10px;
+  background-color: #333;
+}
+
+.login-submit:hover {
+  background-color: #000;
 }

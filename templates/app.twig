@@ -21,7 +21,7 @@
     <h4>Unfiltered list of all the artist</h4>
     <div class="artist-list">
       {% for band in bands %}
-        <a href="{{ band.link }}" class="btn">{{ band.name }}</a>
+        <a href="{{ band.link }}" class="band-item">{{ band.name }}</a>
       {% endfor %}
     </div>
   </main>
@@ -29,7 +29,9 @@
 {% block footer %}
   <footer>
     <hr>
-    <p><small><em>"Do you bleed ? You will."</em> - Batman to Superman</small></p>
+    <p>Initiative made by a great group of friends who listen to some weird ass shit.</p>
+    <p><small><em>* Band order may have been altered in some logical way</em></small></p>
+    <p><small><em>* May or may not contain actual prog or djent</em></small></p>
   </footer>
 {% endblock %}
 </div>

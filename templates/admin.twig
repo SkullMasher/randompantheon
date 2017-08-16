@@ -10,6 +10,23 @@
 {% endblock %}
 
 {% block main %}
+  <div class="add-band">
+    <h3>Add a band</h3>
+    <form class="">
+      <div class="add-band-inputs">
+        <div class="add-band-input">
+          <label for="bandName" class="db">Band name</label>
+          <input type="text" name="bandName" id="bandName" class="input input--200" placeholder="David Maxim Micic, A.i(d)" autocomplete="off">
+        </div>
+        <div class="add-band-input">
+          <label for="bandLink" class="db">Bandcamp link to artist main page</label>
+          <input type="text" name="bandLink" id="bandLink" class="input input--300" placeholder="https://davidmaximmicic.bandcamp.com/" autocomplete="off">
+        </div>
+      </div>
+      <input type="submit" class="login-submit" value="Add this band already !">
+    </form>
+  </div>
+  <h3>Bands list</h3>
   <table>
     <thead>
       <tr>
@@ -26,4 +43,11 @@
       </tr>
     </tbody>
   </table>
+{% endblock %}
+
+{% block footer %}
+<footer>
+  <hr>
+  <p><small><em>"Do you bleed ? You will."</em> - Batman to Superman</small></p>
+</footer>
 {% endblock %}

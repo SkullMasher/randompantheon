@@ -15,6 +15,11 @@ $app->group('/admin', function () {
     $this->logger->info(" '/admin' route");
     return $this->view->render($response, 'admin.twig', $args);
   })->setName('admin');
+  // /admin/
+  $this->get('/', function ($request, $response, $args) {
+    $this->logger->info(" The fucking '/admin/' route");
+    return $response->withRedirect($this->router->pathfor('admin'));
+  });
 })->add(new AuthMiddleware($container->get('router')));
 
 // /admin/login
