@@ -97,6 +97,10 @@ input {
   width: 300px;
 }
 
+.nav-item {
+  padding: 15px;
+}
+
 .band-item {
   padding: 10px;
 }

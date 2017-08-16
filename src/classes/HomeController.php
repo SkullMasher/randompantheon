@@ -14,13 +14,13 @@ class HomeController
     $this->router = $container['router'];
     $this->view = $container['view'];
     $this->logger = $container['logger'];
-    $this->band = new Band;
   }
 
   function __invoke($request, $response) {
     // Sample log message
     $this->logger->info(" '/' route");
-    $allBands = Band::all()->toArray(); // get the band list
+    $allBands = Band::orderBy('order', 'ASC')->get(); // get the band list
+    // die($allBands);
     $randomBand = $allBands[mt_rand(0, count($allBands) - 1)];
 
     $ViewVariables = [

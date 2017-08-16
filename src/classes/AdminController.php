@@ -22,7 +22,7 @@ class AdminController
   public function getPage($request, $response)
   {
     $this->logger->info(" '/admin' route");
-    $allBands = Band::all()->toArray();
+    $allBands = $this->band->all()->toArray();
     return $this->view->render($response, 'admin.twig', [ 'bands' => $allBands]);
   }
 
