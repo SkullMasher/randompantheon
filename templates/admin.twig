@@ -24,6 +24,10 @@
           <label for="bandLink" class="db">Bandcamp link to artist main page</label>
           <input type="text" name="bandLink" id="bandLink" class="input input--300" placeholder="https://davidmaximmicic.bandcamp.com/">
         </div>
+        <div class="add-band-input">
+          <label for="bandOrder" class="db">Order <small><em>(Optional)</em></small></label>
+          <input type="text" name="bandOrder" id="bandOrder" class="input input--75" placeholder="5">
+        </div>
       </div>
       <input type="hidden" name="_method" value="post">
       {{ csrf.field | raw }}
@@ -68,7 +72,6 @@
     {% endfor %}
     </tbody>
   </table>
-  <p><small>¯\_ツ_/¯ <em>means that the value is not specified</em></small></p>
 {% endblock %}
 
 {% block footer %}

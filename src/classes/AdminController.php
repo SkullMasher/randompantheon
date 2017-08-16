@@ -45,6 +45,7 @@ class AdminController
   {
     $bandName = $request->getParam('bandName');
     $bandLink = $request->getParam('bandLink');
+    $bandOrder = $request->getParam('bandOrder');
 
     $successMessage = '<p class="success">(☞ﾟ∀ﾟ)☞ ' . $bandName .' as been added !</p>';
     $errorMessage = '<p class="error">¯\_ツ_/¯ You failed at adding a band !</p>';
@@ -53,6 +54,7 @@ class AdminController
       // Insert to bands table
       $this->band->name = $bandName;
       $this->band->link = $bandLink;
+      $this->band->order = $bandOrder;
       $this->band->save();
 
       $this->flash->addMessage('addBandSuccess', $successMessage);
