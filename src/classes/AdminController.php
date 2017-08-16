@@ -33,6 +33,8 @@ class AdminController
         return $this->addBand($request, $response);
       case 'delete':
         return $this->deleteBand($request, $response);
+      case 'put':
+        return $this->updateBand($request, $response);
       default:
         die('You are in the default of the method case !');
         break;
@@ -72,5 +74,24 @@ class AdminController
 
     $this->flash->addMessage('deleteBandSuccess', $successMessage);
     return $response->withRedirect($this->router->pathfor('admin'));
+  }
+
+  private function updateBand($request, $response)
+  {
+    $bandId = $request->getParam('bandId');    
+    $bandName = $request->getParam('bandName');
+    $bandLink = $request->getParam('bandLink');
+    $bandOrder = $request->getParam('bandOrder');
+
+    $band = $this->band->find($bandId);
+    $band->name = $bandName;
+    $band->link = $bandLink;
+    $band->order = $bandOrder;
+    $band->save();
+
+    $successMessage = '<p class="success">(☞ﾟ∀ﾟ)☞ ' . $bandName .' as been Updated !</p>';
+
+    $this->flash->addMessage('deleteBandSuccess', $successMessage);
+    return $response->withRedirect($this->router->pathfor('admin')); 
   }
 }

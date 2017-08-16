@@ -21,8 +21,8 @@ class AuthController
   {
     $postAdminName = $request->getParam('adminName');
     $postAdminPassword = $request->getParam('adminPassword');
-    $shrugFace = '<p class="tac">¯\_ツ_/¯</p>';
-    $errorMessage = '<p>Wrong username or password. Try again.</p>';
+    $shrugFace = '<p class="tac error">¯\_ツ_/¯</p>';
+    $errorMessage = '<p class="error">Wrong username or password. Try again.</p>';
  
     if ($this->adminName === $postAdminName && $this->adminPassword === $postAdminPassword) {
       $_SESSION['user'] = $postAdminName;

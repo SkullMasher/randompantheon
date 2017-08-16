@@ -27,7 +27,7 @@
       </div>
       <input type="hidden" name="_method" value="post">
       {{ csrf.field | raw }}
-      <input type="submit" class="login-submit" value="Add this band already !">
+      <input type="submit" class="input-submit input-submit--large" value="Add this band already !">
     </form>
   </div>
   <h3>Band list</h3>
@@ -38,16 +38,24 @@
         <th>Order</th>
         <th>Band name</th>
         <th>Bandcamp link</th>
-        <th>Modify</th>
+        <th>Update</th>
         <th>Delete</th>
       </tr>
     </thead>
     <tbody>
     {% for band in bands %}
       <tr>
-        <td>{{ band.order | default('¯\\_ツ_/¯') }}</td>
-        <td>{{ band.name }}</td>
-        <td>{{ band.link | default('¯\\_ツ_/¯') }}</td>
+        <form action="{{ path_for('admin') }}" class="edit-band" method="post">
+          <td><input type="text" name="bandOrder" class="input--75" value="{{ band.order | default('¯\\_ツ_/¯') }}"></td>
+          <td><input type="text" name="bandName" value="{{ band.name }}"></td>
+          <td><input type="text" name="bandLink" class="input--300"value="{{ band.link | default('¯\\_ツ_/¯') }}"></td>
+          <td>
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="bandId" value="{{ band.id }}">
+            {{ csrf.field | raw }}
+            <input type="submit" class="input-submit" value="update"></input>
+          </td>
+        </form>
         <td>
           <form action="{{ path_for('admin') }}" method="post">
             <input type="hidden" name="_method" value="delete" />
