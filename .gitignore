@@ -3,3 +3,4 @@
 !/logs/README.md
 settings/database.php
 settings/admin.php
+composer.lock
