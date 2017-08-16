@@ -7,10 +7,5 @@ class Band extends \Illuminate\Database\Eloquent\Model
   // Writable column list
   // protected $fillable = ['name', 'mail', 'password'];
 
-  // public function setPassword($password)
-  // {
-  //   $this->update([
-  //     'password' => password_hash($password, PASSWORD_DEFAULT)
-  //   ]);
-  // }
+  public $timestamps = false;
 }

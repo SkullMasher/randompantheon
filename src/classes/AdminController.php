@@ -25,11 +25,18 @@ class AdminController
 
   public function addBand($request, $response)
   {
+    $this->logger->info(" /admin POST");
     $bandName = $request->getParam('bandName');
     $bandLink = $request->getParam('bandLink');
     $successMessage = '<p class="success">(☞ﾟ∀ﾟ)☞ ' . $bandName .' as been added !</p>';
 
     if (strlen($bandName) > 0 && strlen($bandName) < 255 && strlen($bandLink) > 0 && strlen($bandLink) < 255) {
+      // Insert to bands table
+      $band = new Band;
+      $band->name = $bandName;
+      $band->link = $bandName;
+      $band->save();
+
       $this->flash->addMessage('addBandSuccess', $successMessage);
       return $response->withRedirect($this->router->pathfor('admin'));
     }
