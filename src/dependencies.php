@@ -53,10 +53,3 @@ $container['flash'] = function () {
 $container['csrf'] = function ($c) {
     return new \Slim\Csrf\Guard;
 };
-
-$container[AdminController::class] = function ($c) {
-    $view = $c->get('view');
-    $logger = $c->get('logger');
-    $table = $c->get('db')->table('bands');
-    return new \App\WidgetController($view, $logger, $table);
-};

@@ -4,15 +4,13 @@
 */
 class AuthController
 {
-  protected $container;
-  protected $router;
-  protected $flash;
+  private $router;
+  private $flash;
   private $adminName;
   private $adminPassword;
 
   function __construct($container)
   {
-    $this->container = $container;
     $this->router = $container['router'];
     $this->flash = $container['flash'];
     $this->adminName = $container['settings']['admin']['username'];

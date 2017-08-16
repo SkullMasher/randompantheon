@@ -35,6 +35,14 @@ body {
   display: block;
 }
 
+.success {
+  color: limegreen;
+}
+
+.error {
+  color: crimson;
+}
+
 .input {
   background-color: #fff;
   border: 1px solid #000;

@@ -11,10 +11,10 @@ $app->get('/', function ($request, $response, $args) {
 
 $app->group('/admin', function () {
   // /admin
-  $this->get('', function ($request, $response, $args) {
-    $this->logger->info(" '/admin' route");
-    return $this->view->render($response, 'admin.twig', $args);
-  })->setName('admin');
+  $this->get('', 'AdminController:getPage')->setName('admin');
+
+  $this->post('', 'AdminController:addband');
+
   // /admin/
   $this->get('/', function ($request, $response, $args) {
     $this->logger->info(" The fucking '/admin/' route");

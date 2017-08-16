@@ -12,17 +12,20 @@
 {% block main %}
   <div class="add-band">
     <h3>Add a band</h3>
-    <form class="">
+    {{ flash('addBandError') | first | raw }}
+    {{ flash('addBandSuccess') | first | raw }}
+    <form action="{{ path_for('admin') }}" method="post" autocomplete="off">
       <div class="add-band-inputs">
         <div class="add-band-input">
           <label for="bandName" class="db">Band name</label>
-          <input type="text" name="bandName" id="bandName" class="input input--200" placeholder="David Maxim Micic, A.i(d)" autocomplete="off">
+          <input type="text" name="bandName" id="bandName" class="input input--200" placeholder="David Maxim Micic, A.i(d)" autofocus>
         </div>
         <div class="add-band-input">
           <label for="bandLink" class="db">Bandcamp link to artist main page</label>
-          <input type="text" name="bandLink" id="bandLink" class="input input--300" placeholder="https://davidmaximmicic.bandcamp.com/" autocomplete="off">
+          <input type="text" name="bandLink" id="bandLink" class="input input--300" placeholder="https://davidmaximmicic.bandcamp.com/">
         </div>
       </div>
+      {{ csrf.field | raw }}
       <input type="submit" class="login-submit" value="Add this band already !">
     </form>
   </div>
