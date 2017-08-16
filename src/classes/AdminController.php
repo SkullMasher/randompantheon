@@ -8,6 +8,7 @@ class AdminController
   private $flash;
   private $logger;
   private $view;
+  private $band;
 
   function __construct($container)
   {
@@ -15,6 +16,7 @@ class AdminController
     $this->flash = $container['flash'];
     $this->logger = $container['logger'];
     $this->view = $container['view'];
+    $this->band = new Band;
   }
 
   public function getPage($request, $response)
@@ -47,10 +49,9 @@ class AdminController
 
     if (strlen($bandName) > 0 && strlen($bandName) < 255 && strlen($bandLink) > 0 && strlen($bandLink) < 255) {
       // Insert to bands table
-      $band = new Band;
-      $band->name = $bandName;
-      $band->link = $bandLink;
-      $band->save();
+      $this->band->name = $bandName;
+      $this->band->link = $bandLink;
+      $this->band->save();
 
       $this->flash->addMessage('addBandSuccess', $successMessage);
       return $response->withRedirect($this->router->pathfor('admin'));
@@ -62,9 +63,14 @@ class AdminController
 
   private function deleteBand($request, $response)
   {
-    $bandId = $request->getParam('bandID');
+    $bandId = $request->getParam('bandId');
+    $bandName = $this->band->find($bandId)->name;
+
+    $this->band->destroy($bandId); // delete in DB. It's that EZ
+
     $successMessage = '<p class="success">(☞ﾟ∀ﾟ)☞ ' . $bandName .' as been <span class="error">DELETED</span> !</p>';
-    $errorMessage = '<p class="error">¯\_ツ_/¯ Could not delete that band !</p>';
-    
+
+    $this->flash->addMessage('deleteBandSuccess', $successMessage);
+    return $response->withRedirect($this->router->pathfor('admin'));
   }
 }
