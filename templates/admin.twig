@@ -39,11 +39,13 @@
       </tr>
     </thead>
     <tbody>
+    {% for band in bands %}
       <tr>
-        <td>1</td>
-        <td>David Maxim Micic</td>
-        <td>https://davidmaximmicic.bandcamp.com/</td>
+        <td>{{ band.id }}</td>
+        <td>{{ band.name }}</td>
+        <td>{{ band.link }}</td>
       </tr>
+    {% endfor %}
     </tbody>
   </table>
 {% endblock %}

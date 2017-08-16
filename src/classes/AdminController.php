@@ -20,7 +20,8 @@ class AdminController
   public function getPage($request, $response)
   {
     $this->logger->info(" '/admin' route");
-    return $this->view->render($response, 'admin.twig');
+    $allBands = Band::all()->toArray();
+    return $this->view->render($response, 'admin.twig', [ 'bands' => $allBands]);
   }
 
   public function addBand($request, $response)
@@ -34,7 +35,7 @@ class AdminController
       // Insert to bands table
       $band = new Band;
       $band->name = $bandName;
-      $band->link = $bandName;
+      $band->link = $bandLink;
       $band->save();
 
       $this->flash->addMessage('addBandSuccess', $successMessage);
